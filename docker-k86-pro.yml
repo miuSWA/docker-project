@@ -1,0 +1,23 @@
+apiVersion:  apps/v1
+kind:  Deployment
+metadata:
+   name:  docker-k86-pro-deployment
+   labels: 
+      app:  docker-k86-pro
+spec: 
+    replicas:  1
+    selector:  
+       matchLabels:  
+               app:  docker-k86-pro
+    template:
+       metadata: 
+         labels:
+            app:  docker-k86-pro
+       spec:  
+             containers:   
+              - name:  docker-k86-pro
+                image:  sumayyajahan19/docker-pro
+                ports:  
+                - containerPort:  8080
+                  
+           
